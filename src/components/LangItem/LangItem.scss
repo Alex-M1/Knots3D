@@ -1,0 +1,21 @@
+.lang{
+  &-item{
+    border-bottom: 1px solid  #707070;
+    a{
+      text-decoration: none;
+    }
+    &:hover{
+      opacity: .8;
+    }
+    button{
+      width: 100%;
+      padding: .5rem;
+
+    }
+    span{
+      justify-content: start;
+      color: #e4e4e4;
+      font-size: 1.4rem;
+    }
+  }
+}

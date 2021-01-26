@@ -1,0 +1,23 @@
+.cards-group{
+  &-title{
+    background: #5f0b0b;
+    padding: .4rem;
+  }
+  &-content{
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    justify-content: space-between;
+    grid-gap: 30px;
+    padding: 1rem 0;
+  }
+  @media  (max-width: 992px){
+    &-content{
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+  @media  (max-width: 768px){
+    &-content{
+      grid-template-columns: 1fr;
+    }
+  }
+}
