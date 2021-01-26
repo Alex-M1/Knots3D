@@ -1,10 +1,10 @@
 import React from 'react'
 import './HeaderTitle.scss'
 
-function HeaderTitle(props) {
+function HeaderTitle({ title = "Knots 3D" }) {
   return (
-    <h1>
-      Knots 3D
+    <h1 className='header-title'>
+      {title}
     </h1>
   )
 }

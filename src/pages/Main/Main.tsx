@@ -8,13 +8,13 @@ import './Main.scss'
 
 function Main({ categories, lang }: IProps) {
   const collection = categories.map(el => {
-    if (el.type_eng === 'Collection') return <Card name={el[`name_${lang}`]} img={el.image} />
+    if (el.type_eng === 'Collection') return <Card name={el[`name_${lang}`]} img={el.image} key={el.name_eng} />
   })
   const category = categories.map(el => {
-    if (el.type_eng === 'Category') return <Card name={el[`name_${lang}`]} img={el.image} />
+    if (el.type_eng === 'Category') return <Card name={el[`name_${lang}`]} img={el.image} key={el.name_eng} />
   })
   const type = categories.map(el => {
-    if (el.type_eng === 'Type') return <Card name={el[`name_${lang}`]} img={el.image} />
+    if (el.type_eng === 'Type') return <Card name={el[`name_${lang}`]} img={el.image} key={el.name_eng} />
   })
 
   return (

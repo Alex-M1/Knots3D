@@ -1,8 +1,10 @@
 import { combineReducers, createStore } from "redux"
 import languages from "./reducers/lang"
 import mainPage from "./reducers/mainPage"
+import header from "./reducers/header"
 
 const reducers = combineReducers({
+  header,
   mainPage,
   languages
 })

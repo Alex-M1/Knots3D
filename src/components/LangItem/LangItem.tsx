@@ -1,12 +1,14 @@
 import { Button } from '@material-ui/core'
 import React from 'react'
 import { NavLink } from 'react-router-dom'
+import { SetPath } from '../../redux/actions/headerAC'
 import { SetLang } from '../../redux/actions/langAC'
 import './LangItem.scss'
 
-function LangItem({ langProp, isChanged = false, setLang }: IProps) {
+function LangItem({ langProp, isChanged = false, setLang, setPath }: IProps) {
   const onLangChange = () => {
     setLang(langProp.code)
+    setPath('/')
   }
   const changeLang = isChanged ? '#699bc9' : 'inherit'
   return (
@@ -29,4 +31,5 @@ interface IProps {
   }
   isChanged?: boolean
   setLang: (lang: string) => SetLang
+  setPath: (path: string) => SetPath
 }

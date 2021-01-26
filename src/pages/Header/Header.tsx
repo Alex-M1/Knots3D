@@ -1,23 +1,34 @@
 import React from 'react'
-import { withRouter } from 'react-router'
-import BackButton from '../../components/BackButton/BackButton'
-import HeaderTitle from '../../components/HeaderTitle/HeaderTitle'
-import LangButton from '../../components/LangButton/LangButton'
-import Share from '../../components/Share/Share'
+import { connect } from 'react-redux'
+import { compose } from 'redux'
+import withHeader from '../../hoc/withHeader'
+import { setPath } from '../../redux/actions/headerAC'
+import { AppStateType } from '../../redux/store'
 import './Header.scss'
-function Header() {
+
+function Header(props) {
   return (
     <header className="header">
       <div className="container">
-        <div className="d-flex justify-content-between align-items-center">
-          <Share />
-          {/* <BackButton /> */}
-          <HeaderTitle />
-          <LangButton />
+        <div className="header-content">
+          {props.leftButton}
+          {props.title}
+          {props.rightButton}
         </div>
       </div>
     </header>
   )
 }
 
-export default withRouter(Header)
+const mapStateToProps = (state: AppStateType) => ({
+  path: state.header.path,
+  lang: state.languages.langCode,
+  localisation: state.languages.staticLocalisation
+})
+
+export default compose(
+  connect(mapStateToProps, {
+    setPath
+  }),
+  withHeader
+)(Header)

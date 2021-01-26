@@ -1,4 +1,15 @@
 .header{
   background: #383838;
   padding: 1rem;
+  &-content{
+    display: grid;
+    grid-template-columns: 2fr 8fr 2fr;
+    align-items: center;
+    :first-child{
+      justify-self: start;
+    }
+    :last-child{
+      justify-self: end;
+    }
+  }
 }
