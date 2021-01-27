@@ -1,4 +1,6 @@
+import { withCardData } from './../../hoc/withCardData';
 import { connect } from "react-redux"
+import { compose } from "redux"
 import { AppStateType } from "../../redux/store"
 import Main from "./Main"
 
@@ -7,4 +9,7 @@ const mapStateToProps = (state: AppStateType) => ({
   lang: state.languages.langCode
 })
 
-export default connect(mapStateToProps)(Main)
+export default compose(
+  connect(mapStateToProps),
+  withCardData
+)(Main)

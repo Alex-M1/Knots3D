@@ -21,14 +21,16 @@ export const withHeader = (Component: React.ComponentType<any>) => {
       leftButton = <BackButton setPath={setPath} />
       title = <HeaderTitle title={localisation.selectLang[`name_${lang}`]} />
       rightButton = <div></div>
+    } else {
+      categories.forEach(el => {
+        if (path === `/${el.code}`) {
+          leftButton = <BackButton setPath={setPath} />
+          title = <HeaderTitle title={el[`name_${lang}`]} />
+          rightButton = <div>sss</div>
+        }
+      })
     }
-    categories.forEach(el => {
-      if (path === `/${el.code}`) {
-        leftButton = <BackButton setPath={setPath} />
-        title = <HeaderTitle title={el[`name_${lang}`]} />
-        rightButton = <div>sss</div>
-      }
-    })
+
 
     return <Component
       leftButton={leftButton}

@@ -1,3 +1,4 @@
+import { withCardData } from './../../hoc/withCardData';
 import { setPath } from './../../redux/actions'
 import { connect } from "react-redux"
 import { withRouter } from "react-router"
@@ -18,5 +19,6 @@ const mapStateToProps = (state: AppStateType) => ({
 export default compose(
   connect(mapStateToProps, { setPath }),
   withPath,
+  withCardData,
   withRouter
 )(Knots) as React.ComponentType<any>

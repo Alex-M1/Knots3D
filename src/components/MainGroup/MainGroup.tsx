@@ -1,14 +1,16 @@
 import React from 'react'
 import './MainGroup.scss'
 
-function MainGroup({ category, cards }: IProps) {
+function MainGroup({ category, cards, isMain = true }: IProps) {
+  const type = isMain ?
+    <div className="cards-group-title">
+      <div className="container">
+        <h3>{category}</h3>
+      </div>
+    </div> : null
   return (
     <>
-      <div className="cards-group-title">
-        <div className="container">
-          <h3>{category}</h3>
-        </div>
-      </div>
+      {type}
       <div className="container">
         <div className="cards-group-content">
           {cards}
@@ -21,6 +23,7 @@ function MainGroup({ category, cards }: IProps) {
 export default MainGroup
 
 interface IProps {
-  category: string
+  category?: string
   cards: JSX.Element[]
+  isMain?: boolean
 }

@@ -15,7 +15,8 @@ export default [
     name_fr: 'Liste Complète',
     name_it: 'Lista Completa',
     name_tuek: 'Tam Liste',
-    image: './assets/img/listimage/draw_backhandhitch_2d_1.png'
+    image: './assets/img/listimage/draw_backhandhitch_2d_1.png',
+    elems: 130
   },
   {
     code: 'favorite',
@@ -33,7 +34,8 @@ export default [
     name_fr: 'Favoris',
     name_it: 'Preferiti',
     name_tuek: 'Favoril',
-    image: './assets/img/listimage/draw_doppelterspierenstich_2d_1.png'
+    image: './assets/img/listimage/draw_doppelterspierenstich_2d_1.png',
+    elems: null
   },
 
   {
@@ -52,7 +54,8 @@ export default [
     name_fr: 'Seafaring',
     name_it: 'Nautica',
     name_tuek: 'Denizcilik',
-    image: './assets/img/listimage/draw_fassschlag2_2d_1.png'
+    image: './assets/img/listimage/draw_fassschlag2_2d_1.png',
+    elems: 37
   },
   {
     code: 'feuerwehr' || 'retten',
@@ -70,7 +73,8 @@ export default [
     name_fr: 'Pompiers',
     name_it: 'Incendi e Salvataggio',
     name_tuek: 'İtfaiye',
-    image: './assets/img/listimage/draw_halbmastwurf_2d_1.png'
+    image: './assets/img/listimage/draw_halbmastwurf_2d_1.png',
+    elems: 18
   },
   {
     code: 'pfadfinder',
@@ -88,7 +92,8 @@ export default [
     name_fr: 'Scoutisme',
     name_it: 'Scoutismo',
     name_tuek: 'Izcilik',
-    image: './assets/img/listimage/draw_einfachertakling_2d_1.png'
+    image: './assets/img/listimage/draw_einfachertakling_2d_1.png',
+    elems: 12
   },
   {
     code: 'deko',
@@ -106,7 +111,8 @@ export default [
     name_fr: 'Décoratif',
     name_it: 'Decotazioni',
     name_tuek: 'Süsleme',
-    image: './assets/img/listimage/draw_doppeltmuenz_2d_1.png'
+    image: './assets/img/listimage/draw_doppeltmuenz_2d_1.png',
+    elems: 7
   },
   {
     code: 'hilfe',
@@ -124,7 +130,8 @@ export default [
     name_fr: 'Premiers Secours',
     name_it: 'Pronto Soccorso',
     name_tuek: 'İlk Yardım',
-    image: './assets/img/listimage/draw_chirugenknoten_2d_1.png'
+    image: './assets/img/listimage/draw_chirugenknoten_2d_1.png',
+    elems: 1
   },
   {
     code: 'camping',
@@ -142,7 +149,8 @@ export default [
     name_fr: 'Camping',
     name_it: 'Campeggio',
     name_tuek: 'Kamping',
-    image: './assets/img/listimage/draw_doppeltkonstriktorknoten_2d_1.png'
+    image: './assets/img/listimage/draw_doppeltkonstriktorknoten_2d_1.png',
+    elems: 16
   },
   {
     code: 'angeln',
@@ -160,7 +168,8 @@ export default [
     name_fr: 'Pêche',
     name_it: 'Pesca',
     name_tuek: 'Balık Tutma',
-    image: './assets/img/listimage/draw_davyknoten_2d_1.png'
+    image: './assets/img/listimage/draw_davyknoten_2d_1.png',
+    elems: 29
   },
   {
     code: 'verschieden',
@@ -178,7 +187,8 @@ export default [
     name_fr: 'Divers',
     name_it: 'Varie',
     name_tuek: 'çeşitli',
-    image: './assets/img/listimage/draw_hondaknoten_2d_1.png'
+    image: './assets/img/listimage/draw_hondaknoten_2d_1.png',
+    elems: 18
   },
   {
     code: 'kletter',
@@ -196,7 +206,8 @@ export default [
     name_fr: 'Escalade',
     name_it: 'Arrampicata',
     name_tuek: 'Dağcılık',
-    image: './assets/img/listimage/draw_blakeknoten_2d_1.png'
+    image: './assets/img/listimage/draw_blakeknoten_2d_1.png',
+    elems: 26
   },
 
   {
@@ -215,7 +226,8 @@ export default [
     name_fr: 'Coudes',
     name_it: 'Nodi di Giunzione',
     name_tuek: 'Tutturucular',
-    image: './assets/img/listimage/draw_stecktauknoten_2d_1.png'
+    image: './assets/img/listimage/draw_stecktauknoten_2d_1.png',
+    elems: 21
   },
   {
     code: 'buende',
@@ -233,7 +245,8 @@ export default [
     name_fr: 'Binding',
     name_it: 'Annodare',
     name_tuek: 'Bağlayıcı',
-    image: './assets/img/listimage/draw_diagomalbund_2d_1.png'
+    image: './assets/img/listimage/draw_diagomalbund_2d_1.png',
+    elems: 6
   },
   {
     code: 'schlaufe' || 'schlaufen',
@@ -251,7 +264,8 @@ export default [
     name_fr: 'Boucles',
     name_it: 'Nodi ad Occhio',
     name_tuek: 'Ilmekler',
-    image: './assets/img/listimage/draw_achterknotenschlaufe_2d_1.png'
+    image: './assets/img/listimage/draw_achterknotenschlaufe_2d_1.png',
+    elems: 2
   },
   {
     code: 'festmacher',
@@ -269,7 +283,8 @@ export default [
     name_fr: 'Attelages',
     name_it: 'Nodi di Ancoraggio',
     name_tuek: 'Hitches',
-    image: './assets/img/listimage/draw_fassschlag_2d_1.png'
+    image: './assets/img/listimage/draw_fassschlag_2d_1.png',
+    elems: 54
   },
   {
     code: 'spezi',
@@ -287,7 +302,8 @@ export default [
     name_fr: 'Spéciale',
     name_it: 'Speciale',
     name_tuek: 'Özel',
-    image: './assets/img/listimage/draw_feuerwehrbunsch_2d_1.png'
+    image: './assets/img/listimage/draw_feuerwehrbunsch_2d_1.png',
+    elems: 5
   },
   {
     code: 'stop',
@@ -305,7 +321,8 @@ export default [
     name_fr: 'Arrêts',
     name_it: 'Nodi d`arresto',
     name_tuek: 'Durdurucular',
-    image: './assets/img/listimage/draw_affenfaustknoten_2d_1.png'
+    image: './assets/img/listimage/draw_affenfaustknoten_2d_1.png',
+    elems: 9
   },
 ];
 

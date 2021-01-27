@@ -36,6 +36,7 @@ export interface Categories {
   name_it: string;
   name_tuek: string;
   image: string;
+  elems: number
 }
 
 
