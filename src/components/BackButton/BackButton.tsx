@@ -19,7 +19,6 @@ function BackButton({ to = '/', setPath }: IProps) {
         onTouchStart={onPressStart}
         onTouchEnd={onPressEnd}
         onClick={backClick}
-        href={to}
       >
         <div className="back-button" style={{ backgroundPosition: bg }} />
       </IconButton>

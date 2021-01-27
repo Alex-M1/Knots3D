@@ -1,12 +1,16 @@
 import React from 'react'
 import { connect } from 'react-redux'
-import { withRouter } from 'react-router'
+import { match, withRouter } from 'react-router'
 import { compose } from 'redux'
-import withPath from '../../hoc/withPath'
+import { withPath } from '../../hoc'
+import { Categories, KnotsDescription, StaticLocalisation } from '../../redux/reducers'
+import { setPath } from '../../redux/actions'
 import { AppStateType } from '../../redux/store'
 import './Knots.scss'
 
-function Knots(props) {
+function Knots(props: IProps) {
+  const { lang, localisation, knots, categories, match } = props
+
   return (
     <div>
 
@@ -14,14 +18,12 @@ function Knots(props) {
   )
 }
 
+export default Knots
 
-
-const mapStateToProps = (state: AppStateType) => ({
-
-})
-
-export default compose(
-  connect(mapStateToProps),
-  withPath,
-  withRouter
-)(Knots)
+interface IProps {
+  lang: string
+  localisation: StaticLocalisation
+  categories: Categories
+  knots: KnotsDescription
+  match: match
+}

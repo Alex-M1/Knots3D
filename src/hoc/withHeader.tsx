@@ -5,9 +5,12 @@ import LangButton from '../components/LangButton/LangButton'
 import Share from '../components/Share/Share'
 import { SetPath } from '../redux/actions/headerAC'
 import { StaticLocalisation } from '../redux/reducers/lang'
+import categories from '../assets/categories'
 
-const withHeader = (Component: React.ComponentType<any>) => {
-  let leftButton: JSX.Element, rightButton: JSX.Element, title: JSX.Element
+export const withHeader = (Component: React.ComponentType<any>) => {
+  let leftButton: JSX.Element,
+    rightButton: JSX.Element,
+    title: JSX.Element
 
   const HeaderContainer = ({ path, lang, localisation, setPath }: IProps) => {
     if (path === '/') {
@@ -19,6 +22,13 @@ const withHeader = (Component: React.ComponentType<any>) => {
       title = <HeaderTitle title={localisation.selectLang[`name_${lang}`]} />
       rightButton = <div></div>
     }
+    categories.forEach(el => {
+      if (path === `/${el.code}`) {
+        leftButton = <BackButton setPath={setPath} />
+        title = <HeaderTitle title={el[`name_${lang}`]} />
+        rightButton = <div>sss</div>
+      }
+    })
 
     return <Component
       leftButton={leftButton}
@@ -28,8 +38,6 @@ const withHeader = (Component: React.ComponentType<any>) => {
   }
   return HeaderContainer
 }
-
-export default withHeader
 
 interface IProps {
   path: string

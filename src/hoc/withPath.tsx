@@ -1,18 +1,18 @@
-import React from 'react'
-import { RouteComponentProps } from 'react-router';
-import { SetPath, setPath } from '../redux/actions/headerAC';
+import React, { useCallback, useEffect } from 'react'
+import { SetPath } from '../redux/actions/headerAC';
 
-const withPath = (Component: React.ComponentType<any>) => {
 
-  const WithPath = (props: any) => {
-    props.setPath(props.match.path)
+export const withPath = (Component: React.ComponentType<any>) => {
+  const WithPath = (props: IProps) => {
+    useEffect(() => {
+      props.setPath(props.match.path)
+    }, [props.match.path])
     return <Component {...props} />
   }
   return WithPath
 }
 
-export default withPath
-
 interface IProps {
+  match: any
   setPath: (path: string) => SetPath
 }

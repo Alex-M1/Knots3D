@@ -1,7 +1,7 @@
 import React from 'react'
 import './MainGroup.scss'
 
-function MainGroup({ category, cards }) {
+function MainGroup({ category, cards }: IProps) {
   return (
     <>
       <div className="cards-group-title">
@@ -19,3 +19,8 @@ function MainGroup({ category, cards }) {
 }
 
 export default MainGroup
+
+interface IProps {
+  category: string
+  cards: JSX.Element[]
+}

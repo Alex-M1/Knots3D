@@ -1,4 +1,4 @@
-import { SetPath } from "../actions/headerAC"
+import { SetPath } from "../actions"
 import { SET_PATH } from "../constants"
 
 const initialState = {

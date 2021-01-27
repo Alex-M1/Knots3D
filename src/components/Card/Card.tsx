@@ -4,9 +4,9 @@ import { Button } from '@material-ui/core'
 import { NavLink } from 'react-router-dom'
 
 
-function Card({ name, img }) {
+function Card({ name, img, to }: IProps) {
   return (
-    <NavLink to="descr">
+    <NavLink to={`/${to}`}>
       <Button className="card-button">
         <div className="card">
           <div className="card-content text-center">
@@ -14,9 +14,7 @@ function Card({ name, img }) {
             <p className="name">
               {name}
             </p>
-            <p>
-              130
-        </p>
+            <p>130</p>
           </div>
         </div>
       </Button>
@@ -26,3 +24,9 @@ function Card({ name, img }) {
 }
 
 export default Card
+
+interface IProps {
+  img: string
+  name: string
+  to: string
+}
