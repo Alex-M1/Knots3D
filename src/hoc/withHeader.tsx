@@ -1,18 +1,20 @@
 import React from 'react'
-import BackButton from '../components/BackButton/BackButton'
-import HeaderTitle from '../components/HeaderTitle/HeaderTitle'
-import LangButton from '../components/LangButton/LangButton'
-import Share from '../components/Share/Share'
-import { SetPath } from '../redux/actions/headerAC'
-import { StaticLocalisation } from '../redux/reducers/lang'
 import categories from '../assets/categories'
+import { BackButton, HeaderTitle, LangButton, Search, Share } from '../components'
+import { SetPath, SetSearchItem } from '../redux/actions'
+import { KnotsDescription, StaticLocalisation } from '../redux/reducers'
 
 export const withHeader = (Component: React.ComponentType<any>) => {
   let leftButton: JSX.Element,
     rightButton: JSX.Element,
     title: JSX.Element
 
-  const HeaderContainer = ({ path, lang, localisation, setPath }: IProps) => {
+  const HeaderContainer = (props: IProps) => {
+    const {
+      path, lang, localisation, searchInput,
+      knots, setPath, setSearchItem
+    } = props
+
     if (path === '/') {
       leftButton = <Share />
       title = <HeaderTitle />
@@ -26,11 +28,16 @@ export const withHeader = (Component: React.ComponentType<any>) => {
         if (path === `/${el.code}`) {
           leftButton = <BackButton setPath={setPath} />
           title = <HeaderTitle title={el[`name_${lang}`]} />
-          rightButton = <div>sss</div>
+          rightButton = <Search
+            searchInput={searchInput}
+            setSearchItem={setSearchItem}
+            localisation={localisation}
+            knots={knots}
+            lang={lang}
+          />
         }
       })
     }
-
 
     return <Component
       leftButton={leftButton}
@@ -45,5 +52,8 @@ interface IProps {
   path: string
   localisation: StaticLocalisation
   lang: string
+  searchInput: string
+  knots: KnotsDescription
   setPath: (path: string) => SetPath
+  setSearchItem: (searchItems: KnotsDescription, input: string) => SetSearchItem
 }

@@ -1,7 +1,7 @@
 import React from 'react'
 import './Header.scss'
 
-function Header(props) {
+function Header(props: IProps) {
   return (
     <header className="header">
       <div className="container">
@@ -16,3 +16,9 @@ function Header(props) {
 }
 
 export default Header
+
+interface IProps {
+  leftButton: JSX.Element
+  title: JSX.Element
+  rightButton: JSX.Element
+}

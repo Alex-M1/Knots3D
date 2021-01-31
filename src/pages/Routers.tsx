@@ -22,7 +22,7 @@ function Routers(props: IProps) {
 }
 
 const mapStateToProps = (state: AppStateType) => ({
-  categories: state.mainPage.categories
+  categories: state.main.categories
 })
 export default connect(mapStateToProps)(Routers)
 

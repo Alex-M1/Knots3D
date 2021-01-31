@@ -1,4 +1,4 @@
-import { SET_PATH } from "../constants";
+import { SET_PATH } from "../constants"
 
 export const setPath = (path: string): SetPath => ({ type: SET_PATH, path })
 

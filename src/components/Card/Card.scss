@@ -24,6 +24,10 @@
   &-description{
     margin-top: 0.8rem;
   }
+  .second-name{
+    font-size: .7rem;
+    color: #868686;
+  }
 }
 
 .card-button{
@@ -61,6 +65,12 @@
     padding-top: 20%;
     &-img{
       width: 100%;
+    }
+    .name{
+      font-size: .65rem;
+      p{
+        font-size: .5rem;
+      }
     }
   }
 }
