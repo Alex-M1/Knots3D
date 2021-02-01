@@ -24,6 +24,6 @@ export default MainGroup
 
 interface IProps {
   category?: string
-  cards: JSX.Element[]
+  cards: JSX.Element[] | JSX.Element
   isMain?: boolean
 }

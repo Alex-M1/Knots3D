@@ -1,6 +1,9 @@
 .header{
   background: #383838;
   padding: 1rem;
+  position: fixed;
+  width: 100%;
+  z-index: 20;
   &-content{
     display: grid;
     grid-template-columns: 2fr 8fr 2fr;

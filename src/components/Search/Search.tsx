@@ -1,7 +1,7 @@
 import React, { SyntheticEvent } from 'react'
 import { SetSearchItem } from '../../redux/actions'
 import { KnotsDescription, StaticLocalisation } from '../../redux/reducers'
-import './Search.scss'
+import SearchView from './SearchView'
 
 function Search({ searchInput, localisation, lang, knots, setSearchItem }: IProps) {
   const searchChange = (e: SyntheticEvent<HTMLInputElement>) => {
@@ -10,16 +10,9 @@ function Search({ searchInput, localisation, lang, knots, setSearchItem }: IProp
     })
     setSearchItem(filteredList, e.currentTarget.value)
   }
+  const searchProps = { searchInput, localisation, lang, searchChange }
 
-  return (
-    <input
-      type="text"
-      onChange={searchChange}
-      value={searchInput}
-      placeholder={localisation.search[`name_${lang}`]}
-      className="search"
-    />
-  )
+  return < SearchView {...searchProps} />
 }
 
 export default Search
@@ -28,6 +21,6 @@ interface IProps {
   localisation: StaticLocalisation
   lang: string
   searchInput: string
-  knots: KnotsDescription
-  setSearchItem: (searchItems: KnotsDescription, input: string) => SetSearchItem
+  knots: KnotsDescription[]
+  setSearchItem: (searchItems: KnotsDescription[], input: string) => SetSearchItem
 }

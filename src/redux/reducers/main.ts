@@ -14,11 +14,11 @@ export default function (state = intialState, action) {
 }
 
 interface MainState {
-  knotsDescription: KnotsDescription
+  knotsDescription: KnotsDescription[]
   categories: Categories[]
 }
 
-export type KnotsDescription = typeof knotsDescription
+export type KnotsDescription = typeof knotsDescription[0]
 export interface Categories {
   code: string;
   type_eng: string;

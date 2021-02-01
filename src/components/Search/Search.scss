@@ -1,0 +1,14 @@
+.search{
+  &-input{
+    width: 100%;
+    padding: .3rem .2rem;
+    &:focus{
+      outline-color:  #8baffd;
+    }
+  }
+  &-button{
+    width: 47px;
+    height: 47px;
+    background-image: url(../../assets/img/imagesheet2.png);
+  }
+}

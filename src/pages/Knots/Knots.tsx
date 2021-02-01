@@ -1,33 +1,30 @@
-import React from 'react'
+import React, { useMemo } from 'react'
 import { match } from 'react-router'
-import Card from '../../components/Card'
-import MainGroup from '../../components/MainGroup'
-import { Categories, KnotsDescription, StaticLocalisation } from '../../redux/reducers'
+import { MainGroup, Card } from '../../components'
+import { KnotsDescription } from '../../redux/reducers'
 import './Knots.scss'
 
 function Knots(props: IProps) {
-  const { lang, localisation, knots, categories, match, searchItems } = props
+  const { lang, knots, match, searchItems, setCard } = props
   const path: string = match.path.replace(/\//, '')
-  const imgPath = './assets/img/listimage/'
-  const transformName = (name: string) => name.split('_')[0]
-  const otherName = (name: string) => name.split('_').join(', ')
-  console.log(searchItems)
-  //@ts-ignore
-  const card: JSX.Element[] = knots.map(el => {
-    if (path === 'all') {
-      const name = transformName(el[`knotenname_${lang}`])
-      const secondName = otherName(el[`knotenname_${lang}`])
-      return <Card name={name} img={`${imgPath}${el.knotenbild2d}`} to={'/'} key={el.knotenname_eng} secondName={secondName} />
-    }
-    return el.knoten_typ.split('_').map(type => {
-      if (type === path) {
-        const name = transformName(el[`knotenname_${lang}`])
-        const secondName = otherName(el[`knotenname_${lang}`])
-        return <Card name={name} img={`${imgPath}${el.knotenbild2d}`} to={'/'} key={el.knotenname_eng} secondName={secondName} />
-      }
-    })
-  })
 
+  const card = useMemo(() => {
+    if (searchItems !== null && searchItems.length !== 130) {
+      return searchItems.map(el => setCard(el, lang))
+    }
+    return knots.map(el => {
+      if (path === 'all') {
+        return setCard(el, lang)
+      }
+      return el.knoten_typ.split('_').map(type => {
+        if (type === path) {
+          return setCard(el, lang)
+        }
+      })
+    })
+  }, [searchItems])
+
+  //@ts-ignore
   return <MainGroup cards={card} isMain={false} />
 }
 
@@ -35,9 +32,8 @@ export default Knots
 
 interface IProps {
   lang: string
-  localisation: StaticLocalisation
-  categories: Categories
-  knots: KnotsDescription
+  knots: KnotsDescription[]
   match: match
-  searchItems: KnotsDescription
+  searchItems: KnotsDescription[]
+  setCard: (el: KnotsDescription, lang: string) => JSX.Element
 }

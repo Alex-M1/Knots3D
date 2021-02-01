@@ -1,8 +1,9 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
-import { Categories } from '../redux/reducers'
+import { Categories, KnotsDescription } from '../redux/reducers'
 import { AppStateType } from '../redux/store'
+import Description from './Description'
 import Header from './Header'
 import Knots from './Knots'
 import Lang from './Lang'
@@ -12,20 +13,29 @@ function Routers(props: IProps) {
   return (
     <Router>
       <Header />
-      <Switch>
-        <Route exact path="/" component={Main} />
-        <Route path="/lang" component={Lang} />
-        {props.categories.map(el => <Route path={`/${el.code}`} key={el.name_eng} component={Knots} />)}
-      </Switch>
+      <div className="all-content">
+        <Switch>
+          <Route exact path="/" component={Main} />
+          <Route path="/lang" component={Lang} />
+          {props.categories.map(el => <Route path={`/${el.code}`} key={el.name_eng} component={Knots} />)}
+          {props.knots.map(el => {
+            const re = / /g
+            const to = el.knotenname_eng.split('_')[0].replace(re, '').toLocaleLowerCase()
+            return < Route path={`/${to}`} key={to} component={Description} />
+          })}
+        </Switch>
+      </div>
     </Router>
   )
 }
 
 const mapStateToProps = (state: AppStateType) => ({
-  categories: state.main.categories
+  categories: state.main.categories,
+  knots: state.main.knotsDescription
 })
 export default connect(mapStateToProps)(Routers)
 
 interface IProps {
   categories: Categories[]
+  knots: KnotsDescription[]
 }

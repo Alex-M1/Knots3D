@@ -2,9 +2,10 @@ import { connect } from "react-redux"
 import { withRouter } from "react-router"
 import { setPath } from './../../redux/actions'
 import { compose } from "redux"
-import { withCardData, withPath } from "../../hoc"
+import { withCardData, withPath, withCard } from "../../hoc"
 import { AppStateType } from "../../redux/store"
 import Knots from "./Knots"
+
 
 const mapStateToProps = (state: AppStateType) => ({
   lang: state.languages.langCode,
@@ -18,6 +19,7 @@ const mapStateToProps = (state: AppStateType) => ({
 
 export default compose(
   connect(mapStateToProps, { setPath }),
+  withCard,
   withPath,
   withCardData,
   withRouter
