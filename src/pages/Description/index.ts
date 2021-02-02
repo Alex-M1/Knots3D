@@ -3,9 +3,9 @@ import { connect } from 'react-redux'
 import Description from './Description'
 
 const mapStateToProps = (state: AppStateType) => ({
-  knots: state.main.knotsDescription,
   lang: state.languages.langCode,
-  localisation: state.languages.staticLocalisation
+  localisation: state.languages.staticLocalisation,
+  categories: state.main.categories
 })
 
 export default connect(mapStateToProps)(Description)

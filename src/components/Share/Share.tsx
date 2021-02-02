@@ -5,7 +5,7 @@ import './Share.scss'
 function Share(props) {
   return (
     <IconButton>
-      <div className="share-icon" />
+      <div className="share-icon button-size" />
     </IconButton>
   )
 }

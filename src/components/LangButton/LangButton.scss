@@ -4,3 +4,9 @@
   height: 52px;
   background-position: -106px -704px;
 }
+
+@media(max-width:576px){
+  .lang-icon-button{
+    padding: 9px !important;
+  }
+}

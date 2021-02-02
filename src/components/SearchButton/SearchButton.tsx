@@ -16,7 +16,7 @@ function SearchButton({ isSearch, setSearch }: IProps) {
       onTouchEnd={onPressEnd}
       onClick={onSearchClick}
     >
-      <div className="search-button" style={{ backgroundPosition: bg }} />
+      <div className="search-button button-size" style={{ backgroundPosition: bg }} />
     </IconButton>
   )
 }

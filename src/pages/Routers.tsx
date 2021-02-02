@@ -13,18 +13,18 @@ function Routers(props: IProps) {
   return (
     <Router>
       <Header />
-      <div className="all-content">
-        <Switch>
-          <Route exact path="/" component={Main} />
-          <Route path="/lang" component={Lang} />
-          {props.categories.map(el => <Route path={`/${el.code}`} key={el.name_eng} component={Knots} />)}
-          {props.knots.map(el => {
-            const re = / /g
-            const to = el.knotenname_eng.split('_')[0].replace(re, '').toLocaleLowerCase()
-            return < Route path={`/${to}`} key={to} component={Description} />
-          })}
-        </Switch>
-      </div>
+      <Switch>
+        <Route exact path="/" component={Main} />
+        <Route path="/lang" component={Lang} />
+        {props.categories.map(el => <Route path={`/${el.code}`} key={el.name_eng} component={Knots} />)}
+        {props.knots.map(el => {
+          const re = / /g
+          const to = el.knotenname_de.split('_')[0].replace(re, '').toLocaleLowerCase()
+          return < Route path={`/${to}`} key={to} >
+            <Description knot={el} />
+          </Route>
+        })}
+      </Switch>
     </Router>
   )
 }

@@ -24,8 +24,13 @@ function Knots(props: IProps) {
     })
   }, [searchItems])
 
-  //@ts-ignore
-  return <MainGroup cards={card} isMain={false} />
+
+  return (
+    <div className="page-content">
+      {/* @ts-ignore */}
+      <MainGroup cards={card} isMain={false} />
+    </div>
+  )
 }
 
 export default Knots

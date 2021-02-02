@@ -1,5 +1,6 @@
-import React, { useCallback, useEffect } from 'react'
-import { SetPath } from '../redux/actions/headerAC';
+import React, { useEffect } from 'react'
+import { SetPath } from '../redux/actions'
+
 
 
 export const withPath = (Component: React.ComponentType<any>) => {

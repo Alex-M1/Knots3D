@@ -1,14 +1,14 @@
 import { SetLang } from './../actions'
-import staticLocalisation from '../../assets/staticLocalisation.json'
 import appLang from '../../assets/languages.json'
 import clientLang from '../../assets/clientLang'
 import { SET_LANGUAGE } from '../constants'
+import staticLocalisation from '../../assets/staticLocalisation.json'
 
 
 const initialState: Lang = {
   appLang,
   langCode: clientLang,
-  staticLocalisation: staticLocalisation
+  staticLocalisation
 }
 
 const languages = (state = initialState, action: SetLang) => {

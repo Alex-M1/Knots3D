@@ -10,10 +10,10 @@ const withCard = (Component: React.ComponentType<any>) => {
     const name = transformName(el[`knotenname_${lang}`])
     const secondName = otherName(el[`knotenname_${lang}`])
     const re = / /g
-    const to = el.knotenname_eng.split('_')[0].replace(re, '').toLocaleLowerCase()
+    const to = el.knotenname_de.split('_')[0].replace(re, '').toLocaleLowerCase()
     return <Card name={name}
       img={`${imgPath}${el.knotenbild2d}`}
-      to={`/${to}`} key={el.knotenname_eng}
+      to={to} key={el.knotenname_eng}
       secondName={secondName}
     />
   }

@@ -22,7 +22,7 @@ function Main({ categories, lang }: IProps) {
   })
 
   return (
-    <div>
+    <div className="page-content">
       <MainGroup category={categories[0][`type_${lang}`]} cards={collection} />
       <MainGroup category={categories[3][`type_${lang}`]} cards={category} />
       <MainGroup category={categories[categories.length - 1][`type_${lang}`]} cards={type} />

@@ -50,6 +50,27 @@ body {
   text-align: center;
 }
 
-.all-content{
-  padding-top: 100px;
+.page-content{
+  padding-top: 6.75rem;
+}
+
+
+@media  (max-width: 576px){
+  .container{
+    max-width: 100%;
+    padding: 0 5px;
+  }
+  .button-size{
+    transform: scale(0.7);
+  }
+  .page-content{
+    padding-top: 4.5rem;
+  }
+}
+
+
+@media  (max-width:375px){
+  .button-size{
+    transform: scale(0.6);
+  }
 }

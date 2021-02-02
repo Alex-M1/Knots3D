@@ -8,8 +8,8 @@ function LangButton(props) {
 
   return (
     <NavLink to='/lang'>
-      <IconButton onClick={setPath}>
-        <div className='lang-button' />
+      <IconButton onClick={setPath} className="lang-icon-button">
+        <div className='lang-button button-size' />
       </IconButton>
     </NavLink >
   )

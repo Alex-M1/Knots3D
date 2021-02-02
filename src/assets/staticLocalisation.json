@@ -39,7 +39,7 @@
     "name_eng": "Check the knot carefully and conscientiosly! Failure to bind the knot may cause serious injury or death.",
     "name_de": "Prüfen Sie den Knoten sorgfältig und dewissenhaft! Fejler beim binden des Knotes können zu schweren Verletzungen oder dem Tod führen.",
     "name_esp": "Revise el nudo con cuidado y concienzudamente! La falla de atar el nudo puede causar lesiones graves o la muerte.",
-    "name_ru": "Проверяйте узел тщятельно и добросовестно! Несоблюдение этого узла может привести к серьёзным последствиям или смерти.",
+    "name_ru": "Проверяйте узел тщательно и добросовестно! Несоблюдение этого узла может привести к серьёзным последствиям или смерти.",
     "name_fr": "Vérifiez le noeud soigneusement et consciencieusement! Ne pas attacher le noeud peut des blessures graves ou la mort.",
     "name_it": "Controlla li nodo con cura e con coscienza! La mancata unione del node puo prococare lesioni gravi o morte.",
     "name_tuek": "Düğümü dikkatlice ve dikkatlice kontrol edin! Düğümü bağlayaymamak, ciddi şekildelara veya ölüme neden olabilir."
@@ -160,5 +160,14 @@
     "name_fr": "La liste est vide",
     "name_it": " L'elenco è vuoto",
     "name_tuek": "Liste boş"
+  },
+  "category": {
+    "name_eng": "Category",
+    "name_de": "Kategorien",
+    "name_esp": "Categoría",
+    "name_ru": "Категория",
+    "name_fr": "Catégorie",
+    "name_it": "Categoria",
+    "name_tuek": "Kategori"
   }
 }

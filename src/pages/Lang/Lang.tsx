@@ -17,7 +17,7 @@ function Lang({ appLang, langCode, setLang, setPath }: IProps & RouteComponentPr
   })
   return (
     <div className="container">
-      <div className="lang f-column">
+      <div className="lang f-column page-content">
         {lang}
       </div>
     </div>

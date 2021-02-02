@@ -20,7 +20,7 @@ function BackButton({ to = '/', setPath }: IProps) {
         onTouchEnd={onPressEnd}
         onClick={backClick}
       >
-        <div className="back-button" style={{ backgroundPosition: bg }} />
+        <div className="back-button button-size" style={{ backgroundPosition: bg }} />
       </IconButton>
     </NavLink>
   )
