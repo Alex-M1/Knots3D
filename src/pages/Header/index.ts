@@ -5,6 +5,7 @@ import { withHeader } from "../../hoc"
 import { AppStateType } from "../../redux/store"
 import Header from "./Header"
 
+
 const mapStateToProps = (state: AppStateType) => ({
   path: state.header.path,
   lang: state.languages.langCode,

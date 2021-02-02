@@ -26,6 +26,10 @@ export const withHeader = (Component: React.ComponentType<any>) => {
       leftButton = <BackButton setPath={setPath} />
       title = <HeaderTitle title={localisation.selectLang[`name_${lang}`]} />
       rightButton = <div></div>
+    } else if (typeof path === 'number') {
+      leftButton = <BackButton setPath={setPath} />
+      title = <HeaderTitle title={knots[path][`knotenname_${lang}`].split('_')[0]} />
+      rightButton = <div></div>
     } else {
       categories.forEach(el => {
         if (path === `/${el.code}`) {
@@ -47,7 +51,7 @@ export const withHeader = (Component: React.ComponentType<any>) => {
 }
 
 interface IProps {
-  path: string
+  path: string | number
   localisation: StaticLocalisation
   lang: string
   searchInput: string

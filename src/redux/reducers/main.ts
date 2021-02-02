@@ -1,13 +1,21 @@
 import categories from '../../assets/categories'
 import knotsDescription from '../../assets/knotsDescription.json'
+import { SetType } from '../actions'
+import { SET_TYPE } from '../constants'
 
 const intialState: MainState = {
   knotsDescription,
-  categories
+  categories,
+  knotType: '/'
 }
 
-export default function (state = intialState, action) {
+export default function (state = intialState, action: SetType) {
   switch (action.type) {
+    case SET_TYPE:
+      return {
+        ...state,
+        knotType: action.knotType
+      }
     default:
       return state
   }
@@ -15,7 +23,8 @@ export default function (state = intialState, action) {
 
 interface MainState {
   knotsDescription: KnotsDescription[]
-  categories: Categories[]
+  categories: Categories[],
+  knotType: string
 }
 
 export type KnotsDescription = typeof knotsDescription[0]

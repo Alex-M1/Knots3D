@@ -1,13 +1,13 @@
 import React, { useMemo } from 'react'
 import { match } from 'react-router'
-import { MainGroup, Card } from '../../components'
+import { MainGroup } from '../../components'
 import { KnotsDescription } from '../../redux/reducers'
 import './Knots.scss'
 
 function Knots(props: IProps) {
   const { lang, knots, match, searchItems, setCard } = props
   const path: string = match.path.replace(/\//, '')
-
+  console.log(props)
   const card = useMemo(() => {
     if (searchItems !== null && searchItems.length !== 130) {
       return searchItems.map(el => setCard(el, lang))

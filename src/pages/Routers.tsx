@@ -20,7 +20,7 @@ function Routers(props: IProps) {
         {props.knots.map(el => {
           const re = / /g
           const to = el.knotenname_de.split('_')[0].replace(re, '').toLocaleLowerCase()
-          return < Route path={`/${to}`} key={to} >
+          return < Route path={`/${to}/:id`} key={to} >
             <Description knot={el} />
           </Route>
         })}

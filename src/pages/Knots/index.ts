@@ -19,8 +19,8 @@ const mapStateToProps = (state: AppStateType) => ({
 
 export default compose(
   connect(mapStateToProps, { setPath }),
-  withCard,
+  withRouter,
   withPath,
-  withCardData,
-  withRouter
+  withCard,
+  // withCardData,
 )(Knots) as React.ComponentType<any>
