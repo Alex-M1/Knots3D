@@ -1,6 +1,6 @@
 import React from 'react'
 import categories from '../assets/categories'
-import { BackButton, HeaderTitle, LangButton, Search, Share } from '../components'
+import { BackButton, HeaderTitle, LangButton, LikeButton, Search, Share } from '../components'
 import SearchButton from '../components/SearchButton'
 import { SetPath, SetSearch, SetSearchItem } from '../redux/actions'
 import { KnotsDescription, StaticLocalisation } from '../redux/reducers'
@@ -12,12 +12,16 @@ export const withHeader = (Component: React.ComponentType<any>) => {
 
   const HeaderContainer = (props: IProps) => {
     const {
-      path, lang, localisation, searchInput,
-      knots, setPath, setSearchItem, setSearch, isSearch
+      path, lang, localisation, searchInput, knotType, setLike,
+      knots, setPath, setSearchItem, setSearch, isSearch, favoriteKnots
     } = props
     const searchProps = {
       searchInput, setSearchItem, localisation, knots, lang
     }
+    const likeButtonProps = {
+      knot: knots[+path - 1], favoriteKnots, setLike
+    }
+
     if (path === '/') {
       leftButton = <Share />
       title = <HeaderTitle />
@@ -27,9 +31,9 @@ export const withHeader = (Component: React.ComponentType<any>) => {
       title = <HeaderTitle title={localisation.selectLang[`name_${lang}`]} />
       rightButton = <div></div>
     } else if (typeof path === 'number') {
-      leftButton = <BackButton setPath={setPath} />
-      title = <HeaderTitle title={knots[path][`knotenname_${lang}`].split('_')[0]} />
-      rightButton = <div></div>
+      leftButton = <BackButton setPath={setPath} to={`/${knotType}`} />
+      title = <HeaderTitle title={knots[path - 1][`knotenname_${lang}`].split('_')[0]} />
+      rightButton = <LikeButton {...likeButtonProps} />
     } else {
       categories.forEach(el => {
         if (path === `/${el.code}`) {
@@ -57,7 +61,10 @@ interface IProps {
   searchInput: string
   knots: KnotsDescription[]
   isSearch: boolean
+  knotType: string
+  favoriteKnots: KnotsDescription[]
   setPath: (path: string) => SetPath
   setSearchItem: (searchItems: KnotsDescription[], input: string) => SetSearchItem
   setSearch: (isSearch: boolean) => SetSearch
+  setLike: () => void
 }

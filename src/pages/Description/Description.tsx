@@ -1,18 +1,15 @@
 import React from 'react'
+import { DescriptionContent, KnotsAnimation } from '../../components'
 import { Categories, KnotsDescription, StaticLocalisation } from '../../redux/reducers'
 import './Description.scss'
-import DescriptionContent from './DescriptionContent'
+
 
 function Description(props: IProps) {
-  console.log(props)
   return (
     <div className="container">
       <div className="description page-content">
         <DescriptionContent {...props} />
-
-        <div className="description-animated">
-
-        </div>
+        <KnotsAnimation {...props} />
       </div>
     </div>
   )

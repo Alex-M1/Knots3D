@@ -1,3 +1,4 @@
+import { setType } from './../../redux/actions/main'
 import { withCardData } from './../../hoc'
 import { connect } from 'react-redux'
 import { compose } from 'redux'
@@ -10,6 +11,6 @@ const mapStateToProps = (state: AppStateType) => ({
 })
 
 export default compose(
-  connect(mapStateToProps),
+  connect(mapStateToProps, { setType }),
   withCardData
 )(Main) as React.ComponentType<any>

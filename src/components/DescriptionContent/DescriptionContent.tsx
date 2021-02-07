@@ -1,5 +1,6 @@
 import React from 'react'
 import { Categories, KnotsDescription, StaticLocalisation } from '../../redux/reducers'
+import './DescriptionContent.scss'
 
 function DescriptionContent({ localisation, lang, knot, categories }: IProps) {
   const warning = (
@@ -57,7 +58,7 @@ function DescriptionContent({ localisation, lang, knot, categories }: IProps) {
 export default DescriptionContent
 
 interface IProps {
-  lang: string,
+  lang: string
   localisation: StaticLocalisation
   knot: KnotsDescription
   categories: Categories[]

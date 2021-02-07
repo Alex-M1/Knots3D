@@ -3,12 +3,14 @@ import languages from "./reducers/lang"
 import main from "./reducers/main"
 import header from "./reducers/header"
 import search from "./reducers/search"
+import description from "./reducers/description"
 
 const reducers = combineReducers({
   header,
   main,
   languages,
-  search
+  search,
+  description
 })
 
 const store = createStore(reducers)

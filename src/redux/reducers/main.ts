@@ -6,7 +6,7 @@ import { SET_TYPE } from '../constants'
 const intialState: MainState = {
   knotsDescription,
   categories,
-  knotType: '/'
+  knotType: 'all'
 }
 
 export default function (state = intialState, action: SetType) {

@@ -1,11 +1,19 @@
 import React from 'react'
 import { MainGroup, Card } from '../../components'
+import { SetType } from '../../redux/actions'
 import { Categories } from '../../redux/reducers'
 import './Main.scss'
 
-function Main({ categories, lang }: IProps) {
+function Main({ categories, lang, setType }: IProps) {
   const card = (el: Categories, lang: string) => (
-    <Card to={el.code} name={el[`name_${lang}`]} img={el.image} key={el.name_eng} amount={el.elems} />
+    <Card
+      to={el.code}
+      name={el[`name_${lang}`]}
+      img={el.image}
+      key={el.name_eng}
+      amount={el.elems}
+      setType={setType}
+    />
   )
   const collection = categories.map(el => {
     if (el.type_eng === 'Collection') return card(el, lang)
@@ -31,4 +39,5 @@ export default Main
 interface IProps {
   categories: Categories[],
   lang: string
+  setType: (knotType: string) => SetType
 }

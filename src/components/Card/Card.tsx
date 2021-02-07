@@ -2,11 +2,17 @@ import React from 'react'
 import './Card.scss'
 import { Button } from '@material-ui/core'
 import { NavLink } from 'react-router-dom'
+import { SetType } from '../../redux/actions'
 
 
-function Card({ name, img, to, amount, secondName }: IProps) {
+function Card({ name, img, to, amount, secondName, setType }: IProps) {
+  const knotType = () => {
+    try {
+      setType(to)
+    } catch { }
+  }
   return (
-    <NavLink to={`/${to}`}>
+    <NavLink to={`/${to}`} onClick={knotType}>
       <Button className="card-button">
         <div className="card">
           <div className="card-content text-center">
@@ -32,4 +38,5 @@ interface IProps {
   to: string
   amount?: number
   secondName?: string
+  setType?: (knotType: string) => SetType
 }
